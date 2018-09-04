@@ -51,7 +51,7 @@ class App extends Component {
     const todos = this.state.todos;
     const todo = todos[index];
 
-    const response = await axios.delete(`${this.apiURL}/todos/${todo.id}`);
+    await axios.delete(`${this.apiURL}/todos/${todo.id}`);
 
     delete todos[index];
     this.setState({ todos });
@@ -126,7 +126,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">CRUD React</h1>
+          <h1 className="App-title">Todo List CRUD React</h1>
         </header>
 
         <div className="container">
@@ -150,7 +150,7 @@ class App extends Component {
             onClick={this.state.editing ? this.updateTodo : this.addTodo}
             disabled={this.state.newTodo.length < 1}
           >
-            {this.state.editing ? "Update todo" : "Add todo"}
+            {this.state.editing ? " Update todo" : " Add new todo"}
           </button>
           {
             this.state.loading &&

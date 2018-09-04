@@ -2,19 +2,23 @@ import React from "react";
 
 const ListItem = props => {
     return <li className="list-group-item">
-            <button
-                className="btn-sm mr-4 btn btn-info"
-                onClick={props.editTodo}
-            >
-            U
-            </button>
-            {props.item.name}
-            <button
-                className="btn-sm ml-4 btn btn-danger"
-                onClick={props.deleteTodo}
-            >
-            X
-            </button>
+            <div className="d-flex">
+                <div className="mr-auto">{props.item.name}</div>
+                <div>
+                    <button
+                    className="btn-sm btn btn-info"
+                    onClick={props.editTodo}
+                    >
+                    <i class="fas fa-pen"></i>
+                    </button>
+                    <button
+                        className="btn-sm ml-2 btn btn-danger"
+                        onClick={props.deleteTodo}
+                    >
+                    <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
+            </div>
         </li>;
 };
 
